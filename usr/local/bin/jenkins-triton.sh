@@ -116,9 +116,9 @@ fi
 
 export _JAVA_OPTIONS="${JAVA_GC_FLAGS} -Xmx${MAX_JVM_HEAP_KB}K -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dhudson.DNSMultiCast.disabled=true"
 
-exec authbind --deep /usr/local/bin/jenkins.sh \
+exec /usr/local/bin/jenkins.sh \
     --httpsCertificate=${CERT_PATH}/cert.pem \
     --httpsPrivateKey=${CERT_PATH}/key.pem \
-    --httpPort=80 \
-    --httpsPort=443 \
+    --httpPort=8080 \
+    --httpsPort=8443 \
     "$@"
